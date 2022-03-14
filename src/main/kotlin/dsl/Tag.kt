@@ -3,36 +3,38 @@ package dsl
 import configurations.DslConfigurations
 
 /**
- * TODO
+ * Base tag implementation
  * */
 class Tag : TagProtocol {
     /**
-     * TODO
+     * Flag - "Does tag is header?"
      * */
     override var header: Boolean = false
 
     /**
-     * TODO
+     * Name of tag
      * */
     override var name: String = ""
 
     /**
-     * TODO
+     * Params of tag
      * */
     override val params: MutableList<KeyValueProtocol> = mutableListOf()
 
     /**
-     * TODO
+     * Content of tag
      * */
     private val content: MutableList<String> = mutableListOf()
 
     /**
-     * TODO
+     * Setting content
+     *
+     * @param   builder     Lambda for setup content
      * */
     override fun content(builder: XmlDslProtocol.() -> Unit) = let { content += XmlDsl().apply(builder).xml() }
 
     /**
-     * TODO
+     * Creating String XML
      * */
     override fun xml(): String {
         val paramsCollected = params.joinToString(separator = " ") { param -> param.xml() }
