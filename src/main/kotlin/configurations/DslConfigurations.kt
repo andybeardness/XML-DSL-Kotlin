@@ -1,26 +1,28 @@
 package configurations
 
 /**
- * TODO
+ * Configuration for DSL
+ *
+ * Base implementation
  */
-object DslConfigurations: DslConfigurationsProtocol {
-   /*
-    * TODO
-    * */
+object DslConfigurations : DslConfigurationsProtocol {
+    /*
+     * Base placeholders
+     * */
     override val namePlaceholder = "{%name%}"
     override val paramsPlaceholder = "{%params%}"
     override val contentPlaceholder = "{%content%}"
 
-   /*
-    * TODO
-    * */
+    /*
+     * Base templates
+     * */
     override var headerBracketsTemplate = "<?$namePlaceholder $paramsPlaceholder?>"
     override var closedTagBracketsTemplate = "<$namePlaceholder $paramsPlaceholder/>"
     override var openedTagBracketsTemplate = "<$namePlaceholder>$contentPlaceholder</$namePlaceholder>"
 
-   /**
-    * TODO
-    * */
+    /**
+     * Base implementation for making tag as header style
+     * */
     override fun makeHeader(name: String, params: String): String =
         headerBracketsTemplate
             .replace(
@@ -33,7 +35,7 @@ object DslConfigurations: DslConfigurationsProtocol {
             )
 
     /**
-     * TODO
+     * Base implementation for making tag as closed style
      * */
     override fun makeClosedTag(name: String, params: String): String =
         closedTagBracketsTemplate
@@ -47,7 +49,7 @@ object DslConfigurations: DslConfigurationsProtocol {
             )
 
     /**
-     * TODO
+     * Base implementation for making tag as opened style
      * */
     override fun makeOpenedTag(name: String, params: String, content: String): String =
         openedTagBracketsTemplate
