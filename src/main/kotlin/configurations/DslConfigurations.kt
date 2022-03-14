@@ -5,7 +5,7 @@ package configurations
  *
  * Base implementation
  */
-object DslConfigurations : DslConfigurationsProtocol {
+object DslConfigurations : DslConfigurationsProtocol, ResetStateProtocol {
     /*
      * Base placeholders
      * */
@@ -14,11 +14,18 @@ object DslConfigurations : DslConfigurationsProtocol {
     override val contentPlaceholder = "{%content%}"
 
     /*
+     * Default templates
+     * */
+    private val headerBracketsTemplateDefault = "<?$namePlaceholder $paramsPlaceholder?>"
+    private val closedTagBracketsTemplateDefault = "<$namePlaceholder $paramsPlaceholder/>"
+    private val openedTagBracketsTemplateDefault = "<$namePlaceholder $paramsPlaceholder>$contentPlaceholder</$namePlaceholder>"
+
+    /*
      * Base templates
      * */
-    override var headerBracketsTemplate = "<?$namePlaceholder $paramsPlaceholder?>"
-    override var closedTagBracketsTemplate = "<$namePlaceholder $paramsPlaceholder/>"
-    override var openedTagBracketsTemplate = "<$namePlaceholder>$contentPlaceholder</$namePlaceholder>"
+    override var headerBracketsTemplate = headerBracketsTemplateDefault
+    override var closedTagBracketsTemplate = closedTagBracketsTemplateDefault
+    override var openedTagBracketsTemplate = openedTagBracketsTemplateDefault
 
     /**
      * Base implementation for making tag as header style
@@ -65,4 +72,13 @@ object DslConfigurations : DslConfigurationsProtocol {
                 oldValue = contentPlaceholder,
                 newValue = content,
             )
+
+    /**
+     * Reset state of singleton
+     */
+    override fun resetState() {
+        headerBracketsTemplate = headerBracketsTemplateDefault
+        closedTagBracketsTemplate = closedTagBracketsTemplateDefault
+        openedTagBracketsTemplate = openedTagBracketsTemplateDefault
+    }
 }
