@@ -11,6 +11,7 @@ Simple to use DSL for XML creating
 - [Title](#xml-dsl-kotlin)
 - [About](#about)
 - [Navigation](#navigation)
+- [Source tree](#source-tree)
 - [Examples](#examples)
 - - [Quick view](#quick-view)
 - - - [Header](#header)
@@ -20,6 +21,25 @@ Simple to use DSL for XML creating
 - - [Entity to XML](#entity-to-xml)
 - - [Separating](#separating)
 - [Author](#author)
+
+## Source tree
+
+- [main/kotlin/](src/main/kotlin)
+- - [configurations/](src/main/kotlin/configurations)
+- - - [DslConfigurations.kt](src/main/kotlin/configurations/DslConfigurations.kt) - Configs for DSL
+- - - [DslConfigurationsProtocol.kt](src/main/kotlin/configurations/DslConfigurationsProtocol.kt) - Configs protocol
+- - [dsl/](src/main/kotlin/dsl)
+- - - [XmlDsl.kt](src/main/kotlin/dsl/XmlDsl.kt) - Main Builder
+- - - [DslProtocol.kt](src/main/kotlin/dsl/DslProtocol.kt) - Main DSL protocol
+- - - [Tag.kt](src/main/kotlin/dsl/Tag.kt) - Tag Scope
+- - - [KeyValue.kt](src/main/kotlin/dsl/KeyValue.kt) - Entity for XMl parameter
+- - [extensions/](src/main/kotlin/extensions)
+- - - [KeyValueEqualityExtensions.kt](src/main/kotlin/extensions/KeyValueEqualityExtensions.kt) - Extension function for creating KeyValue
+- - [samples/](src/main/kotlin/samples)
+- - - [Basics.kt](src/main/kotlin/samples/Basics.kt) - Basics examples
+- - - [EntityToXml.kt](src/main/kotlin/samples/EntityToXml.kt) - Entity to XML example
+- - - [Separating.kt](src/main/kotlin/samples/Separating.kt) - Separating XML example
+- [test/](src/test/kotlin) - unit tests
 
 ## Examples 
 
