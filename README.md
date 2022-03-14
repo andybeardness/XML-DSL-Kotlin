@@ -42,7 +42,7 @@ val header =
 <?xml version="1.0"?>
 ```
 
-[see in code](blob/release/src/main/kotlin/samples/Basics.kt)
+[see in code](src/main/kotlin/samples/Basics.kt)
 
 #### Closed tag
 
@@ -62,7 +62,7 @@ val closedTag =
 <policy server="https://localhost/" email="example@mail.com"/>
 ```
 
-[see in code](#)
+[see in code](src/main/kotlin/samples/Basics.kt)
 
 #### Opened tag
 
@@ -99,7 +99,7 @@ val openedTag =
 </attachments>
 ```
 
-[see in code](#)
+[see in code](src/main/kotlin/samples/Basics.kt)
 
 ### Entity to XML
 
