@@ -18,7 +18,7 @@ object DslConfigurations : DslConfigurationsProtocol {
      * */
     override var headerBracketsTemplate = "<?$namePlaceholder $paramsPlaceholder?>"
     override var closedTagBracketsTemplate = "<$namePlaceholder $paramsPlaceholder/>"
-    override var openedTagBracketsTemplate = "<$namePlaceholder>$contentPlaceholder</$namePlaceholder>"
+    override var openedTagBracketsTemplate = "<$namePlaceholder $paramsPlaceholder>$contentPlaceholder</$namePlaceholder>"
 
     /**
      * Base implementation for making tag as header style
