@@ -42,7 +42,7 @@ val header =
 <?xml version="1.0"?>
 ```
 
-[see in code](#)
+[see in code](blob/release/src/main/kotlin/samples/Basics.kt)
 
 #### Closed tag
 
