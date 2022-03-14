@@ -4,7 +4,7 @@ import dsl.XmlDsl
 import extensions.eq
 
 /**
- * TODO
+ * Basic usage
  * */
 fun main() {
     val xml = XmlDsl.build {
