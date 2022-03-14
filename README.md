@@ -223,7 +223,7 @@ val policyXml = policy.toXml()
 </policy>
 ```
 
-[see in code](src/main/kotlin/samples/EntityToXml.kt)
+[see in code](src/main/kotlin/samples/EntityToXml.kt#L6)
 
 ### Separating
 
@@ -298,7 +298,7 @@ val xmlComplex =
 </appointments>
 ```
 
-[see in code](src/main/kotlin/samples/Separating.kt)
+[see in code](src/main/kotlin/samples/Separating.kt#L7)
 
 ## Author
 
