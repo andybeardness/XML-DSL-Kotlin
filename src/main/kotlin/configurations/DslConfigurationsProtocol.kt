@@ -60,3 +60,10 @@ interface DslConfigurationsProtocol {
      * */
     fun makeOpenedTag(name: String, params: String, content: String): String
 }
+
+/**
+ * Protocol for reset states
+ */
+interface ResetStateProtocol {
+    fun resetState()
+}
