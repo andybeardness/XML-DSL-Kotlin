@@ -3,6 +3,9 @@ package samples
 import dsl.XmlDsl
 import extensions.eq
 
+/**
+ * Basic usage
+ * */
 fun main() {
     val xml = XmlDsl.build {
         tag {
