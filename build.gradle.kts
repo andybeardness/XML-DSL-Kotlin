@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "ru.beardness.andy"
-version = "0.1"
+version = "1.0"
 
 repositories {
     mavenCentral()
