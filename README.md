@@ -16,6 +16,7 @@ Simple to use DSL for XML creating
 - - - [Header](#header)
 - - - [Closed tag](#closed-tag)
 - - - [Opened tag](#opened-tag)
+- - - [Complex](#complex)
 - - [Entity to XML](#entity-to-xml)
 - - [Separating](#separating)
 - [Author](#author)
@@ -42,7 +43,7 @@ val header =
 <?xml version="1.0"?>
 ```
 
-[see in code](src/main/kotlin/samples/Basics.kt)
+[see in code](src/main/kotlin/samples/Basics.kt#L6)
 
 #### Closed tag
 
@@ -62,7 +63,7 @@ val closedTag =
 <policy server="https://localhost/" email="example@mail.com"/>
 ```
 
-[see in code](src/main/kotlin/samples/Basics.kt)
+[see in code](src/main/kotlin/samples/Basics.kt#L18)
 
 #### Opened tag
 
@@ -99,7 +100,56 @@ val openedTag =
 </attachments>
 ```
 
-[see in code](src/main/kotlin/samples/Basics.kt)
+[see in code](src/main/kotlin/samples/Basics.kt#L30)
+
+#### Complex
+
+```kotlin
+val complex =
+    XmlDsl.build {
+        tag {
+            header = true
+            name = "xml"
+            params += "version" eq "1.0"
+        }
+        tag {
+            name = "policy"
+            params += "server" eq "https://localhost/"
+            params += "email" eq "example@mail.com"
+        }
+        tag {
+            name = "attachments"
+            params += "token" eq "1234567890"
+            content {
+                tag {
+                    name = "attachment"
+                    params += "id" eq "0"
+                }
+                tag {
+                    name = "attachment"
+                    params += "id" eq "1"
+                }
+                tag {
+                    name = "attachment"
+                    params += "id" eq "2"
+                }
+            }
+        }
+    }.xml()
+```
+
+```xml
+<!-- complex -->
+<?xml version="1.0"?>
+<policy server="https://localhost/" email="example@mail.com"/>
+<attachments token="1234567890">
+    <attachment id="0"/>
+    <attachment id="1"/>
+    <attachment id="2"/>
+</attachments>
+```
+
+[see in code](src/main/kotlin/samples/Basics.kt#L59)
 
 ### Entity to XML
 
@@ -173,7 +223,7 @@ val policyXml = policy.toXml()
 </policy>
 ```
 
-[see in code](#)
+[see in code](src/main/kotlin/samples/EntityToXml.kt)
 
 ### Separating
 
@@ -248,7 +298,7 @@ val xmlComplex =
 </appointments>
 ```
 
-[see in code](#)
+[see in code](src/main/kotlin/samples/Separating.kt)
 
 ## Author
 
