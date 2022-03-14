@@ -35,28 +35,28 @@ interface DslConfigurationsProtocol {
     /**
      * Protocol for making tag as header style
      *
-     * @param    name    name of tag
-     * @param    params  key-values params of tag
-     * @return           header tag as String
+     * @param    name    Name of tag
+     * @param    params  Key-values params of tag
+     * @return           Header tag as String
      * */
     fun makeHeader(name: String, params: String): String
 
     /**
      * Protocol for making tag as closed style
      *
-     * @param   name    name of tag
-     * @param   params  key-values params of tag
-     * @return          closed tag as String
+     * @param   name    Name of tag
+     * @param   params  Key-values params of tag
+     * @return          Closed tag as String
      * */
     fun makeClosedTag(name: String, params: String): String
 
     /**
      * Protocol for making tag as closed style
      *
-     * @param   name    name of tag
-     * @param   params  key-values params of tag
-     * @param   content content of opened tag, that includes inner tags
-     * @return          opened tag as String
+     * @param   name    Name of tag
+     * @param   params  Key-values params of tag
+     * @param   content Content of opened tag, that includes inner tags
+     * @return          Opened tag as String
      * */
     fun makeOpenedTag(name: String, params: String, content: String): String
 }
