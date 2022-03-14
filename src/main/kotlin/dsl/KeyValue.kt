@@ -1,7 +1,9 @@
 package dsl
 
 /**
- * TODO
+ * DTO for Key-Value
+ *
+ * Using at params of XML tag
  * */
 data class KeyValue(
     val key: String,
@@ -9,7 +11,7 @@ data class KeyValue(
 ) : KeyValueProtocol {
 
     /**
-     * TODO
+     * Creating String XML
      * */
     override fun xml(): String = "$key=\"$value\""
 }
