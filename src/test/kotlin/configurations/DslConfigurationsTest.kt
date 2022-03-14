@@ -2,6 +2,7 @@ package configurations
 
 import dsl.XmlDsl
 import extensions.eq
+import org.junit.After
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
@@ -18,6 +19,11 @@ internal class DslConfigurationsTest {
     private val headerBracketsTemplateNew = "[[$namePlaceholder] : [$paramsPlaceholder]]"
     private val closedTagBracketsTemplateNew = "%%$namePlaceholder %% $paramsPlaceholder%%"
     private val openedTagBracketsTemplateNew = "+=$namePlaceholder=+ _${contentPlaceholder}_ ^$paramsPlaceholder^"
+
+    @After
+    fun tearDown() {
+        DslConfigurations.resetState()
+    }
 
     @Test
     fun `Test 1 - Base`() {
