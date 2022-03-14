@@ -1,66 +1,81 @@
 package dsl
 
+/*
+* ==================================
+*           MAIN PROTOCOLS
+* ==================================
+* */
+
 /**
- * TODO
+ * XML DSL Protocol Main
  * */
 interface XmlDslProtocol : XmlProtocol, XmlBuilderProtocol
 
 /**
- * TODO
+ * Tag Protocol Main
  * */
 interface TagProtocol: XmlProtocol, TagContentProtocol, ContentProtocol
 
 /**
- * TODO
+ * Key-Value Protocol Main
  * */
 interface KeyValueProtocol: XmlProtocol
 
+/*
+* ==================================
+*         BASICS PROTOCOLS
+* ==================================
+* */
+
 /**
- * TODO
+ * XML to String Protocol
  * */
 interface XmlProtocol {
     /**
-     * TODO
+     * Convert XML to String
+     *
+     * @return  String of current
      * */
     fun xml(): String
 }
 
 /**
- * TODO
+ * Protocol for Content of opened XML tag
  * */
 interface ContentProtocol {
     /**
-     * TODO
+     * Setup for XML DSL Builder
      * */
     fun content(builder: XmlDslProtocol.() -> Unit)
 }
 
 /**
- * TODO
+ * Protocol for tag creating
  * */
 interface XmlBuilderProtocol {
     /**
-     * TODO
+     * Create tag inside scope
      * */
     fun tag(builder: TagProtocol.() -> Unit)
 }
 
 /**
- * TODO
+ * Protocol for basic tag content
  * */
 interface TagContentProtocol {
     /**
-     * TODO
+     * true  -> if current XML tag should use header style
+     * false -> if current XML tag is regular closed or opened tag
      * */
     var header: Boolean
 
     /**
-     * TODO
+     * Name of tag
      * */
     var name: String
 
     /**
-     * TODO
+     * Key-Value params of tag
      * */
     val params: MutableList<KeyValueProtocol>
 }
