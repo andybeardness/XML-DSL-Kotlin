@@ -22,6 +22,7 @@ interface DslConfigurationsProtocol {
     val namePlaceholder: String
     val paramsPlaceholder: String
     val contentPlaceholder: String
+    val spaceForParamsPlaceholder: String
 
     /*
      * Templates with placeholders
@@ -31,6 +32,7 @@ interface DslConfigurationsProtocol {
     var headerBracketsTemplate: String
     var closedTagBracketsTemplate: String
     var openedTagBracketsTemplate: String
+    var spaceForParamsTemplate: String
 
     /**
      * Protocol for making tag as header style
